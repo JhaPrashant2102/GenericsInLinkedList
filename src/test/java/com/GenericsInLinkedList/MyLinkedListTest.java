@@ -12,10 +12,24 @@ public class MyLinkedListTest {
 		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
 		MyNode<Integer> myThirdNode = new MyNode<Integer>(56);
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
-		myLinkedList.add(myFirstNode);
-		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThirdNode);
+		myLinkedList.addFromTop(myFirstNode);
+		myLinkedList.addFromTop(mySecondNode);
+		myLinkedList.addFromTop(myThirdNode);
 		boolean check = myLinkedList.getHead().equals(myThirdNode)&&myLinkedList.getHead().getNext().equals(mySecondNode)&&myLinkedList.getTail().equals(myFirstNode);
+		assertTrue(check);
+		myLinkedList.printMyNodes();
+	}
+	
+	@Test
+	public void givenNumber_ShouldBeAddedInLinkedList_FromBottom() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFromBottom(myFirstNode);
+		myLinkedList.addFromBottom(mySecondNode);
+		myLinkedList.addFromBottom(myThirdNode);
+		boolean check = myLinkedList.getHead().equals(myFirstNode)&&myLinkedList.getHead().getNext().equals(mySecondNode)&&myLinkedList.getTail().equals(myThirdNode);
 		assertTrue(check);
 		myLinkedList.printMyNodes();
 	}

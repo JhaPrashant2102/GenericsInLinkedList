@@ -26,7 +26,7 @@ public class MyLinkedList<T> {
 		this.tail = null;
 	}
 
-	public void add(INode customNode) {
+	public void addFromTop(INode customNode) {
 		if(head==null)
 			head = customNode;
 		if(tail==null)
@@ -37,7 +37,7 @@ public class MyLinkedList<T> {
 			customNode.setNext(tempNode);
 		}
 	}
-	public void add2(INode customNode) {
+	public void addFromBottom(INode customNode) {
 		if(head==null) {
 			head = customNode;
 			tail = customNode;
