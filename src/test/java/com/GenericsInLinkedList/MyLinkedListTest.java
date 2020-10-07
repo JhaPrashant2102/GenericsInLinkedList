@@ -64,4 +64,18 @@ public class MyLinkedListTest {
 		myLinkedList.printMyNodes();
 	}
 
+	@Test
+	public void givenNodeOf70_WhenDeleted_ShouldResultIn_NodeOf30_AsNewTailNode() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFromBottom(myFirstNode);
+		myLinkedList.addFromBottom(mySecondNode);
+		myLinkedList.addFromBottom(myThirdNode);
+		MyNode<Integer> nTail = (MyNode<Integer>) myLinkedList.popLast();
+		boolean check = myLinkedList.getTail().equals(nTail)&&myLinkedList.getHead().getNext().equals(mySecondNode);
+		assertTrue(check);
+		myLinkedList.printMyNodes();
+	}
 }
