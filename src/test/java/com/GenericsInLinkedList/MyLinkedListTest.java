@@ -43,7 +43,7 @@ public class MyLinkedListTest {
 		myLinkedList.addFromBottom(myFirstNode);
 		//myLinkedList.addFromBottom(mySecondNode);
 		myLinkedList.addFromBottom(myThirdNode);
-		myLinkedList.insertNode(myFirstNode,myThirdNode,mySecondNode);
+		myLinkedList.insertNode(myFirstNode,mySecondNode);
 		boolean check = myLinkedList.getHead().equals(myFirstNode)&&myLinkedList.getHead().getNext().equals(mySecondNode)&&myLinkedList.getTail().equals(myThirdNode);
 		assertTrue(check);
 		myLinkedList.printMyNodes();
