@@ -61,9 +61,9 @@ public class MyLinkedListTest {
 		myLinkedList.addFromBottom(myFirstNode);
 		myLinkedList.addFromBottom(mySecondNode);
 		myLinkedList.addFromBottom(myThirdNode);
-		MyNode<Integer> nHead = (MyNode<Integer>) myLinkedList.pop();
-		boolean check = myLinkedList.getHead().equals(nHead) && myLinkedList.getHead().getNext().equals(myThirdNode)
-				&& myLinkedList.getTail().equals(myThirdNode);
+		MyNode<Integer> poppedNode = (MyNode<Integer>) myLinkedList.pop();
+		boolean check = myLinkedList.getHead().equals(mySecondNode) && myLinkedList.getHead().getNext().equals(myThirdNode)
+				&& myLinkedList.getTail().equals(myThirdNode)&&poppedNode.equals(myFirstNode);
 		assertTrue(check);
 		myLinkedList.printMyNodes();
 	}

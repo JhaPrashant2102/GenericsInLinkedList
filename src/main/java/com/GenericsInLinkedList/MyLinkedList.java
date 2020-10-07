@@ -68,8 +68,9 @@ public class MyLinkedList<T extends Comparable> {
 	}
 
 	public INode pop() {
+		INode tempNode = head;
 		head = head.getNext();
-		return head;
+		return tempNode;
 	}
 
 	public INode popLast() {
