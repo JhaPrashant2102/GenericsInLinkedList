@@ -60,4 +60,9 @@ public class MyLinkedList<T> {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
+
+	public void insertNode(INode prevNode, INode nextNode, INode newNode) {
+		prevNode.setNext(newNode);
+		newNode.setNext(nextNode);
+	}
 }
