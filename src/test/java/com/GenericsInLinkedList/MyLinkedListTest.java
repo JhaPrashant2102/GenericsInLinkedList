@@ -91,8 +91,24 @@ public class MyLinkedListTest {
 		MyNode<Integer> newNode = (MyNode<Integer>) myLinkedList.searchNode((Integer)30);
 		
 		boolean check = false;
-		if(newNode!=null)
+		if(newNode!=null&&newNode.getKey().equals((Integer)30))
 			check = true;
+		assertTrue(check);
+		myLinkedList.printMyNodes();
+	}
+	
+	@Test
+	public void givenNodeOf30_WhenSearched_NodeOf40ShouldBeInsertedAfterNode30() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFromBottom(myFirstNode);
+		myLinkedList.addFromBottom(mySecondNode);
+		myLinkedList.addFromBottom(myThirdNode);
+		MyNode<Integer> newNode = (MyNode<Integer>) myLinkedList.searchNodeAndInsert((Integer)30,(Integer)40);
+		
+		boolean check = newNode!=null&&newNode.getNext().getKey().equals((Integer)40);
 		assertTrue(check);
 		myLinkedList.printMyNodes();
 	}

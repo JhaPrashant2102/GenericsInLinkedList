@@ -92,4 +92,17 @@ public class MyLinkedList<T> {
 		}
 		return retNode;
 	}
+
+	public INode searchNodeAndInsert(T target, T newKey) {
+		INode newNode = new MyNode(newKey);
+		INode tempNode = head;
+		INode retNode = null;
+		while(tempNode.getNext()!=null) {
+			if(tempNode.getKey().equals(target))
+				retNode = tempNode;
+			tempNode = tempNode.getNext();
+		}
+		insertNode(retNode,newNode);
+		return retNode;
+	}
 }
