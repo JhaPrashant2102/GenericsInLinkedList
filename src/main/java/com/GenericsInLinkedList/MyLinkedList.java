@@ -105,4 +105,22 @@ public class MyLinkedList<T> {
 		insertNode(retNode,newNode);
 		return retNode;
 	}
+
+	public void deleteNode(INode newNode) {
+		INode temp = head;
+		while(temp.getNext()!=newNode) {
+			temp = temp.getNext();
+		}
+		temp.setNext(newNode.getNext());
+	}
+
+	public int size() {
+		INode tempNode =  head;
+		int count = 0;
+		while(tempNode!=null) {
+			count++;
+			tempNode=tempNode.getNext();
+		}
+		return count;
+	}
 }

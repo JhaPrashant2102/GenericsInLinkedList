@@ -112,4 +112,23 @@ public class MyLinkedListTest {
 		assertTrue(check);
 		myLinkedList.printMyNodes();
 	}
+	
+	@Test
+	public void givenNodeOf40_WhenDeleted_TheSizeOfLinkedListShouldBecome3() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFromBottom(myFirstNode);
+		myLinkedList.addFromBottom(mySecondNode);
+		myLinkedList.addFromBottom(myThirdNode);
+		myLinkedList.addFromBottom(myFourthNode);
+		MyNode<Integer> newNode = (MyNode<Integer>) myLinkedList.searchNode((Integer)40);
+		
+		if(newNode!=null)
+		myLinkedList.deleteNode(newNode);
+		assertEquals(3,myLinkedList.size());
+		myLinkedList.printMyNodes();
+	}
 }
