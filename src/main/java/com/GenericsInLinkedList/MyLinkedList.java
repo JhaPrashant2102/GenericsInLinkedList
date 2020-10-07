@@ -81,4 +81,15 @@ public class MyLinkedList<T> {
 		temp.setNext(null);
 		return tail;
 	}
+
+	public INode searchNode(T target) {
+		INode tempNode = head;
+		INode retNode = null;
+		while(tempNode.getNext()!=null) {
+			if(tempNode.getKey().equals(target))
+				retNode = tempNode;
+			tempNode = tempNode.getNext();
+		}
+		return retNode;
+	}
 }

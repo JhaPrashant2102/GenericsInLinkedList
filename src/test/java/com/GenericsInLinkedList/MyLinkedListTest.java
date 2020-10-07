@@ -78,4 +78,22 @@ public class MyLinkedListTest {
 		assertTrue(check);
 		myLinkedList.printMyNodes();
 	}
+	
+	@Test
+	public void givenNodeOf30_WhenSearched_ShouldReturnTrue() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<Integer>();
+		myLinkedList.addFromBottom(myFirstNode);
+		myLinkedList.addFromBottom(mySecondNode);
+		myLinkedList.addFromBottom(myThirdNode);
+		MyNode<Integer> newNode = (MyNode<Integer>) myLinkedList.searchNode((Integer)30);
+		
+		boolean check = false;
+		if(newNode!=null)
+			check = true;
+		assertTrue(check);
+		myLinkedList.printMyNodes();
+	}
 }
