@@ -79,8 +79,9 @@ public class MyLinkedList<T extends Comparable> {
 			temp = temp.getNext();
 		}
 		tail = temp;
+		INode retNode = temp.getNext();
 		temp.setNext(null);
-		return tail;
+		return retNode;
 	}
 
 	public INode searchNode(T target) {

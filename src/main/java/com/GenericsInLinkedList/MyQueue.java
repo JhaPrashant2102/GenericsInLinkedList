@@ -19,4 +19,18 @@ public class MyQueue {
 	public INode top() {
 		return myLinkedList.getHead();
 	}
+
+	public INode dequeue() {
+		return myLinkedList.popLast();
+	}
+
+	public int size() {
+		return myLinkedList.size();
+	}
+
+	public boolean isEmpty() {
+		if(size()==0)
+			return true;
+		else return false;
+	}
 }
