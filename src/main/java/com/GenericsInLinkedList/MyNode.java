@@ -1,6 +1,6 @@
 package com.GenericsInLinkedList;
 
-public class MyNode<T> implements INode<T>{
+public class MyNode<T extends Comparable> implements INode<T>{
 	
 	private T key;
 	private INode next;

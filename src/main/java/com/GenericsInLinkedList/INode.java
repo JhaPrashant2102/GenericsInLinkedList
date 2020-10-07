@@ -1,6 +1,6 @@
 package com.GenericsInLinkedList;
 
-public interface INode<T> {
+public interface INode<T extends Comparable> {
 	T getKey();
 	void setKey(T key);
 	
