@@ -73,7 +73,7 @@ public class MyLinkedList<T extends Comparable> {
 		return tempNode;
 	}
 
-	public INode popLast() {
+	public INode popLast() throws NullPointerException {
 		INode temp = head;
 		while (temp.getNext().getNext() != null) {
 			temp = temp.getNext();
@@ -85,6 +85,8 @@ public class MyLinkedList<T extends Comparable> {
 	}
 
 	public INode searchNode(T target) {
+		if(head==null||tail==null)
+			return null;
 		INode tempNode = head;
 		INode retNode = null;
 		while (tempNode.getNext() != null) {
@@ -159,5 +161,21 @@ public class MyLinkedList<T extends Comparable> {
 			}
 
 		}
+	}
+
+	public void append(INode<T> myNode) {
+		if (head == null)
+			head = myNode;
+		if (tail == null)
+			tail = myNode;
+		else {
+			tail.setNext(myNode);
+			tail = myNode;
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return "MyLinkedListNodes{" + head + '}';
 	}
 }
