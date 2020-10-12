@@ -55,4 +55,18 @@ public class MyLinkedListHashMap<T extends Comparable, V extends Comparable> {
 		return "MyLinkedListHashMap List{"+myBucketArray+'}';
 	}
 
+	public void remove(T key) {
+		int index = getBucketIndex(key);
+		MyLinkedList<T> myLinkedList = this.myBucketArray.get(index);
+		if(myLinkedList==null)
+			return;
+		MyMapNode<T,V> myMapNode =  (MyMapNode<T,V>) myLinkedList.getHead();
+		while(myMapNode.getNext()!=null) {
+			if(myMapNode.getKey()==key) {
+				myLinkedList.deleteNode(myMapNode);
+			}
+			myMapNode = (MyMapNode) myMapNode.getNext();
+		}
+	}
+
 }
